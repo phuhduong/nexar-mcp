@@ -10,6 +10,7 @@ import { SearchComponentsArgs } from '../types.js';
  * Create and register Nexar tools
  */
 export function registerNexarTools(server: Server, nexarClient: NexarClient): void {
+  console.log('Registering Nexar MCP tools...');
   // Register tools/list handler
   server.setRequestHandler(
     z.object({
@@ -43,6 +44,7 @@ export function registerNexarTools(server: Server, nexarClient: NexarClient): vo
       };
     }
   );
+  console.log('Tools registered: search_components');
 
   // Register tools/call handler
   server.setRequestHandler(

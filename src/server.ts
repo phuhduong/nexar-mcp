@@ -25,6 +25,7 @@ export class NexarServer {
 
     // Register tools
     registerNexarTools(this.server, this.nexarClient);
+    console.log('Nexar MCP Server initialized with tools registered');
   }
 
   getServer(): Server {
