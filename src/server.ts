@@ -1,17 +1,17 @@
 /**
  * Server instance creation
  */
-import { Server } from '@modelcontextprotocol/sdk/server/index.js';
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { NexarClient } from './client.js';
 import { registerNexarTools } from './tools/index.js';
 
 export class NexarServer {
-  private server: Server;
+  private server: McpServer;
   private nexarClient: NexarClient;
 
   constructor(clientId: string, clientSecret: string) {
     this.nexarClient = new NexarClient(clientId, clientSecret);
-    this.server = new Server(
+    this.server = new McpServer(
       {
         name: 'nexar-mcp',
         version: '0.1.0',
@@ -28,7 +28,7 @@ export class NexarServer {
     console.log('Nexar MCP Server initialized with tools registered');
   }
 
-  getServer(): Server {
+  getServer(): McpServer {
     return this.server;
   }
 }
